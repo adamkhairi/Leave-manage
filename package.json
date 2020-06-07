@@ -1,0 +1,23 @@
+{
+  "name": "G-conge",
+  "version": "1.0.0",
+  "description": "Le projet consiste à réaliser une application web qui informatise la gestion de congé dans l’objectif de faciliter la gestion de l’entreprise, faciliter les services de chaque utilisateur et améliorer les processus de cette dernière.",
+  "main": "index.js",
+  "scripts": {
+    "Run": "gulp",
+    "build:css": "tailwind build app/scss/tailwind.css -o dist/css/tailwind.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^9.7.6",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "tailwindcss": "^1.4.6"
+  }
+}
