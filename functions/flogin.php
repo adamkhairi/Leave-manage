@@ -35,9 +35,12 @@ if (isset($_POST['loginBtn'])) {
 //        die();
         if($_POST['email'] == $end['mail'] && $_POST['password'] == $end['password']){
             $type = $end['type'];
+            $_SESSION['email'] = $end['mail'];
+            $_SESSION['password'] = $end['password'];
+
             switch ($type) {
                 case 1:
-                    header('location: ../directeur.php');
+                    header('location: ../root.php');
                     break;
 
                 case 2:

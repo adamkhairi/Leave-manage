@@ -15,25 +15,25 @@
     <div class="container mx-auto max-w-4xl h-16 flex justify-around text-xs md:text-sm">
 
         <div class="h-full flex items-center">
-            <a href="#" class="text-gray-600 no-underline mr-4">
-                <i class="fas fa-home text-gray-700 text-2xl "></i><span class="ml-2">Home</span>
+            <a href="#" class="text-gray-900 no-underline mr-6">
+                <span class="m-0 sm:ml-2">Home</span>
             </a>
-            <a href="#" class="text-gray-600 no-underline mr-4">
-                <i class="fas fa-user-circle text-gray-700 text-2xl"></i><span class="ml-2">Profile</span>
+            <a href="#about-us" class="text-gray-900 text-center sm:text-left no-underline mr-6">
+                <span class=" m-0 sm:ml-2">About us</span>
             </a>
         </div>
 
-        <div class="flex justify-center mt-16 text-center md:mt-12">
+        <div class="flex justify-center mt-16 text-center md:mt-12 shadow">
             <a href="#" class="bg-gray-900 h-12 md:h-16 rounded-lg w-32 text-white font-bold text-xs md:text-xl p-4">Logo</a>
         </div>
 
         <div class="h-full flex items-center">
-            <a href="#" class="text-gray-600 no-underline mr-4">
-                <i class="fas fa-user-circle text-gray-700 text-2xl"></i><span class="ml-2">Profile</span>
+            <a href="#" class="text-gray-900 no-underline ml-6">
+                <span class="m-0 sm:ml-2">Profile</span>
 
             </a>
             <a href="#"  onclick="openLogin()"
-               class="button3 bg-gray-900 px-5 py-2 border rounded text-gray-200 hover:bg-gray-700 ">
+               class="button3 bg-gray-900 px-5 py-2 border rounded text-gray-200 hover:bg-gray-700 shadow ml-6">
                 <span>Login</span>
             </a>
         </div>
