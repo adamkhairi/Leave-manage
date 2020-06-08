@@ -107,7 +107,7 @@
             <!--*****-->
             <div class="relative z-20 flex flex-wrap h-full -mt-20 pt-32">
 
-                <div class="w-full bg-white bg-transparent flex flex-column justify-center md:justify-end md:w-1/2">
+                <div class="w-full  bg-transparent flex flex-column justify-center md:justify-end md:w-1/2">
                     <img src="dist/img/bg-1.svg" class="w-5/6" alt="Header Background"/>
                 </div>
 
@@ -149,7 +149,7 @@
                     <p class="opacity-75 leading-relaxed mb-8">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                         Amet autem beatae error esse molestias nulla voluptatem, voluptates? Nobis omnis, quae.</p>
                     <a href="#"
-                       class="bg-gray-900 text-white shadow uppercase font-sans text-xs px-4 py-3 hover:bg-gray-700">Learn
+                       class="bg-gray-900 text-white shadow uppercase  text-xs px-4 py-3 hover:bg-gray-700">Learn
                         more
                         <i class="ml-1 fa fa-chevron-right" aria-hidden="true"></i>
                     </a>
@@ -212,13 +212,14 @@
             </div>
 
         </div>
-
+        <div class="absolute right-0 m-4 text-3xl text-gray-900 md:text-white hover:text-gray-200" onclick="openLogin()">
+            <i class="fas fa-window-close"></i>
+        </div>
         <!-- Image Section -->
         <div class="w-1/2 shadow-2xl">
-            <div class="absolute right-0 m-4 text-3xl text-white hover:text-gray-200" onclick="openLogin()">
-                <i class="fas fa-window-close"></i>
+
+            <div class="object-cover w-full h-screen hidden md:block bg-gray-900">
             </div>
-            <img class="object-cover w-full h-screen hidden md:block" src="https://source.unsplash.com/IXUM4cJynP0">
         </div>
     </div>
 

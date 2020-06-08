@@ -10,14 +10,14 @@ if (isset($_POST['loginBtn'])) {
         exit();
 //        print_r('erooor');
 //        die();
-    }else if(!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
+    } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
         header("location: ../index.php?error=invalidMail");
         echo "
 //         <script>
 //                $('#modal1').css('display','block');
 //                
 //                </script>";
-    }else{
+    } else {
         $sql = "SELECT * FROM `users` WHERE `mail`= :email AND `password`= :password";
         $result = $conn->prepare($sql);
 
@@ -27,40 +27,39 @@ if (isset($_POST['loginBtn'])) {
         $email = $_POST['email'];
         $password = $_POST['password'];
 
+
         $result->execute();
         $end = $result->fetch();
 
 //    $_SESSION[]
         print_r($end);
 //        die();
-        if($_POST['email'] == $end['mail'] && $_POST['password'] == $end['password']){
-            $type = $end['type'];
-            $_SESSION['email'] = $end['mail'];
-            $_SESSION['password'] = $end['password'];
 
-            switch ($type) {
-                case 1:
-                    header('location: ../root.php');
-                    break;
+        $type = $end['type'];
 
-                case 2:
-                    header('location: ../admin.php');
-                    break;
+        $_SESSION['email'] = $end['mail'];
+        $_SESSION['password'] = $end['password'];
+        $_SESSION['userType'] = $end['type'];
+        $_SESSION['nom'] = $end['nom'];
+        $_SESSION['prenom'] = $end['prenom'];
+        $_SESSION['cin'] = $end['cin'];
+        $_SESSION['tel'] = $end['tel'];
+        $_SESSION['service'] = $end['service'];
+        switch ($type) {
+            case 1:
+                header('location: ./../directeur.php');
+                break;
 
-                case 3:
-                    header('location: ../employe.php');
-                    break;
+            case 2:
+                header('location: ./../admin.php');
+                break;
 
-                default:
-                    header('location: ../index.php');
-            }
-        }elseif ($_POST['email'] !== $end['mail']){
-            header('location: index.php?error=invalidMail');
-        }elseif ($_POST['password'] !== $end['password']){
-            header('location: index.php?error=invalidPwd');
-        }else{
-            header('location: index.php?error=invalidInfo');
+            case 3:
+                header('location: ./../employe.php');
+                break;
 
+            default:
+                header('location: ./../index.php');
         }
 
 

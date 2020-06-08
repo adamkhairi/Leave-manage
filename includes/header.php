@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -15,7 +16,7 @@
     <div class="container mx-auto max-w-4xl h-16 flex justify-around text-xs md:text-sm">
 
         <div class="h-full flex items-center">
-            <a href="#" class="text-gray-900 no-underline mr-6">
+            <a href="index.php" class="text-gray-900 no-underline mr-6">
                 <span class="m-0 sm:ml-2">Home</span>
             </a>
             <a href="#about-us" class="text-gray-900 text-center sm:text-left no-underline mr-6">
@@ -23,19 +24,58 @@
             </a>
         </div>
 
-        <div class="flex justify-center mt-16 text-center md:mt-12 shadow">
-            <a href="#" class="bg-gray-900 h-12 md:h-16 rounded-lg w-32 text-white font-bold text-xs md:text-xl p-4">Logo</a>
+        <div class="flex justify-center mt-12 text-center md:mt-12 shadow">
+            <a href="#"
+               class="bg-gray-900 h-12 md:h-16 rounded-lg w-32 text-white font-bold text-xs md:text-xl p-4 hover:bg-transparent">Logo</a>
         </div>
 
         <div class="h-full flex items-center">
-            <a href="#" class="text-gray-900 no-underline ml-6">
-                <span class="m-0 sm:ml-2">Profile</span>
 
-            </a>
-            <a href="#"  onclick="openLogin()"
-               class="button3 bg-gray-900 px-5 py-2 border rounded text-gray-200 hover:bg-gray-700 shadow ml-6">
-                <span>Login</span>
-            </a>
+            <?php
+            if (!empty($_SESSION['email'])) {
+                
+            echo "
+            <p> Welcome back. ".$_SESSION['nom']." </p>
+            ";
+                if ($_SESSION['userType'] == 1) {
+                    echo "
+                   <a href=\"directeur.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-200\">
+                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                    </a>
+                ";
+
+                } else if ($_SESSION['userType'] == 2) {
+                    echo "
+                   <a href=\"admin.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-100 px-4 py-1 pr-5\">
+                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                    </a>
+                ";
+                }else if ($_SESSION['userType'] == 3) {
+                    echo "
+                   <a href=\"employer.php\" class=\"text-gray-900 no-underline ml-6\">
+                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                    </a>
+                ";
+                }
+                echo "
+                   <a href=\"functions/logout.php\"
+                    class=\"button3 bg-gray-900 px-5 py-2 border rounded text-gray-200 hover:bg-gray-700 shadow ml-6\">
+                     <span>Log Out</span>
+                   </a>
+               
+                ";
+            } else {
+                echo "
+                   <a href=\"#\"  onclick=\"openLogin()\"
+                    class=\"button3 bg-gray-900 px-5 py-2 border rounded text-gray-200 hover:bg-gray-700 shadow ml-6\">
+                     <span>Log In</span>
+                   </a>
+               
+                ";
+            }
+
+            ?>
+
         </div>
     </div>
 </nav>
