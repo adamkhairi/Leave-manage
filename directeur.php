@@ -3,12 +3,12 @@
 <?php require "connexion.php";
 @include "includes/header.php";
 if (!empty($_SESSION)) {
-    if ($_SESSION['userType'] !== 1) {
-        header('location: admin.php');
+//     if ($_SESSION['userType'] !== 1) {
+//         header('location: admin.php');
 
-////    ** XDEBUG **
-////    phpinfo();
-    }
+// ////    ** XDEBUG **
+// ////    phpinfo();
+//     }
 }else{
     header('location: index.php');
 

@@ -4,9 +4,9 @@
 require "connexion.php";
 @include "includes/header.php";
 if (!empty($_SESSION)) {
-    if (($_SESSION['userType'] !== 1 || $_SESSION['userType'] !== 2)) {
-        header('location: employer.php');
-    }
+    // if ($_SESSION['userType'] !== 1 || $_SESSION['userType'] !== 2) {
+    //     header('location: employer.php');
+    // }
 } else {
     header('location: index.php');
 
