@@ -10,13 +10,6 @@ if (isset($_POST['loginBtn'])) {
         exit();
 //        print_r('erooor');
 //        die();
-    } else if (!filter_var($_POST['email'], FILTER_VALIDATE_EMAIL)) {
-        header("location: ../index.php?error=invalidMail");
-        echo "
-//         <script>
-//                $('#modal1').css('display','block');
-//                
-//                </script>";
     } else {
         $sql = "SELECT * FROM `users` WHERE `mail`= :email AND `password`= :password";
         $result = $conn->prepare($sql);
@@ -26,41 +19,45 @@ if (isset($_POST['loginBtn'])) {
 
         $email = $_POST['email'];
         $password = $_POST['password'];
-
-
         $result->execute();
         $end = $result->fetch();
 
-//    $_SESSION[]
-        print_r($end);
+        if (!empty($end)) {
+            print_r($end);
 //        die();
+            $type = $end['type'];
 
-        $type = $end['type'];
+            $_SESSION['email'] = $end['mail'];
+            $_SESSION['password'] = $end['password'];
+            $_SESSION['nom'] = $end['nom'];
+            $_SESSION['prenom'] = $end['prenom'];
+            $_SESSION['cin'] = $end['cin'];
+            $_SESSION['tel'] = $end['tel'];
+            $_SESSION['service'] = $end['service'];
+            $_SESSION['userType'] = $end['type'];
+            switch ($type) {
+                case 1:
+                    header('location: ../directeur.php');
+                    break;
 
-        $_SESSION['email'] = $end['mail'];
-        $_SESSION['password'] = $end['password'];
-        $_SESSION['userType'] = $end['type'];
-        $_SESSION['nom'] = $end['nom'];
-        $_SESSION['prenom'] = $end['prenom'];
-        $_SESSION['cin'] = $end['cin'];
-        $_SESSION['tel'] = $end['tel'];
-        $_SESSION['service'] = $end['service'];
-        switch ($type) {
-            case 1:
-                header('location: ./../directeur.php');
-                break;
+                case 2:
+                    header('location: ../admin.php');
+                    break;
 
-            case 2:
-                header('location: ./../admin.php');
-                break;
+                case 3:
+                    header('location: ../employe.php');
+                    break;
 
-            case 3:
-                header('location: ./../employe.php');
-                break;
+                default:
+                    header('location: ../index.php');
+            }
 
-            default:
-                header('location: ./../index.php');
+        } else {
+            header("location: ../index.php?error=00");
+
+
         }
+//    $_SESSION[]
 
 
 //    header('location: ../index.php');

@@ -33,10 +33,7 @@
 
             <?php
             if (!empty($_SESSION['email'])) {
-                
-            echo "
-            <p> Welcome back. ".$_SESSION['nom']." </p>
-            ";
+
                 if ($_SESSION['userType'] == 1) {
                     echo "
                    <a href=\"directeur.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-200\">

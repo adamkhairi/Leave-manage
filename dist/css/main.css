@@ -27,9 +27,17 @@ body::-webkit-scrollbar-thumb {
 .bottom_nav {
   left: 10%;
   right: 10%;
-  bottom: 0%;
+  bottom: 0;
   position: fixed;
   z-index: 99; }
+
+@media (max-width: 768px) {
+  .bottom_nav {
+    left: 0%;
+    right: 0%;
+    padding: auto 1em;
+    zoom: .8;
+    font-size: 12px; } }
 
 .carousel-open:checked + .carousel-item {
   position: static;

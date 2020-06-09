@@ -22,9 +22,9 @@ body::-webkit-scrollbar-thumb {
   outline: 1px solid slategrey;
 }
 
-.error{
-left: 10%;
-  right:10%;
+.error {
+  left: 10%;
+  right: 10%;
   margin: .5rem;
   padding: 1rem 1rem;
   position: fixed;
@@ -32,10 +32,22 @@ left: 10%;
   top: 15%;
 }
 
-.bottom_nav{
+.bottom_nav {
   left: 10%;
-  right:10%;
-  bottom: 0%;
+  right: 10%;
+  bottom: 0;
   position: fixed;
   z-index: 99;
+
 }
+  @media (max-width: 768px) {
+    .bottom_nav {
+
+      left: 0%;
+      right: 0%;
+      padding: auto 1em;
+      zoom: .8;
+      font-size: 12px;
+    }
+
+  }

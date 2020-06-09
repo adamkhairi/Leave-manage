@@ -1,6 +1,6 @@
-<div class="-mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto">
-    <div class="inline-block min-w-full shadow rounded-lg overflow-hidden">
-        <table class="min-w-full leading-normal">
+<div class="-mx-4  md:mx-4 sm:-mx-8 px-4 sm:px-8 py-4 overflow-x-auto ">
+    <div class="inline-block min-w-full rounded-md overflow-hidden">
+        <table class="min-w-full leading-normal shadow border-gray-200">
             <thead>
             <tr>
                 <th
@@ -29,7 +29,7 @@
                 </th>
                 <th
                     class="px-5 py-3 border-b-2 border-gray-200 bg-gray-100 text-left text-xs font-semibold text-gray-600 uppercase tracking-wider">
-                    Manage
+                    Delete Employer
                 </th>
 
             </tr>
@@ -86,14 +86,8 @@
                         </td>
                         <!--                        Manage-->
                         <td class=\"px-5 py-5 border-b border-gray-200 bg-white\">
-                            <div class=\"flex flex-no-wrap justify-center text-4xl\">
-                                <button class=\"text-blue-700 hover:text-blue-600\" 
-                                id=\"upCurrent\" 
-                                name=\"update-current\" 
-                                type=\"submit\"
-                                onclick='secondUpBtn()'
-                                >
-                                    <i class=\"fas fa-edit \"></i>
+                            <div class=\"text-4xl\">
+                             
 
                                 </button>
                                     <form action='functions/delEmp.php' method='get' >
@@ -102,10 +96,8 @@
                                 id=\"delCurrent\" 
                                 name=\"del-current\" 
                                 type=\"submit\"
-                                
                                 >
                                     <i class=\"fas fa-minus-square\"></i>
-
                                 </button>
                                 </form>
                             </div>
