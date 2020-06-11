@@ -39,10 +39,12 @@
 
 
             <!--*****-->
-            <div class="relative z-20 flex flex-wrap h-full -mt-20 pt-32">
+            <div class="relative z-20 flex flex-wrap h-full -mt-32 pt-32">
 
-                <div class="w-full  bg-transparent flex flex-column justify-center md:justify-end md:w-1/2">
-                    <img src="dist/img/bg-1.svg" class="w-5/6" alt="Header Background"/>
+                <div class="w-full  bg-transparent flex flex-column justify-center -ml-8 md:justify-start md:w-1/2">
+<!--                    <img src="dist/img/bg-1.svg" class="w-5/6" alt="Header Background"/>-->
+                    <img src="dist/img/bg-1.svg" class="w-11/12 md:mt-20 m-8" alt="Header Background"/>
+
                 </div>
 
                 <div class="w-full md:w-1/2 p-10 flex justify-center items-center text-gray-600">
@@ -63,7 +65,9 @@
 
             </div>
 
-            <div class="z-10 w-1/2 h-full bg-gray-900 absolute top-0 left-0 -ml-20"></div>
+            <div class="z-10 w-1/2 h-full bg-gray-900 absolute top-0 left-0 bottom-0">
+
+            </div>
 
 
         </div>

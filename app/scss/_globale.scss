@@ -30,11 +30,20 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   z-index: 99;
   top: 15%;
+  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
 }
 
 .bottom_nav {
-  left: 10%;
-  right: 10%;
+  left: 30%;
+  right: 30%;
   bottom: 0;
   position: fixed;
   z-index: 99;
@@ -51,3 +60,26 @@ body::-webkit-scrollbar-thumb {
     }
 
   }
+
+
+@keyframes cssAnimation {
+  to {
+    width:0;
+    height:0;
+    overflow:hidden;
+    //display:none !important;
+    visibility: hidden;
+
+
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width:0;
+    height:0;
+    overflow:hidden;
+
+    //display:none !important;
+    visibility: hidden;
+  }
+}

@@ -22,11 +22,18 @@ body::-webkit-scrollbar-thumb {
   padding: 1rem 1rem;
   position: fixed;
   z-index: 99;
-  top: 15%; }
+  top: 15%;
+  /* Firefox */
+  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  /* Safari and Chrome */
+  /* Opera */
+  animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards; }
 
 .bottom_nav {
-  left: 10%;
-  right: 10%;
+  left: 30%;
+  right: 30%;
   bottom: 0;
   position: fixed;
   z-index: 99; }
@@ -38,6 +45,20 @@ body::-webkit-scrollbar-thumb {
     padding: auto 1em;
     zoom: .8;
     font-size: 12px; } }
+
+@keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; } }
+
+@-webkit-keyframes cssAnimation {
+  to {
+    width: 0;
+    height: 0;
+    overflow: hidden;
+    visibility: hidden; } }
 
 .carousel-open:checked + .carousel-item {
   position: static;

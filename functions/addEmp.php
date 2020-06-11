@@ -1,24 +1,24 @@
 <?php
 
-$fname = !empty($_POST['fName']) ? trim($_POST['fName']) : null;
-$lname = !empty($_POST['lName']) ? trim($_POST['lName']) : null;
-$cin = !empty($_POST['cin']) ? trim($_POST['cin']) : null;
-$tel = !empty($_POST['tel']) ? trim($_POST['tel']) : null;
-$mail = !empty($_POST['userMail']) ? trim($_POST['userMail']) : null;
-$password = !empty($_POST['password']) ? trim($_POST['password']) : null;
-$uType = !empty($_POST['type']) ? trim($_POST['type']) : null;
-$service = !empty($_POST['service']) ? trim($_POST['service']) : null;
+$fname = !empty($_POST['fName']) ? $_POST['fName'] : '';
+$lname = !empty($_POST['lName']) ? $_POST['lName'] : '';
+$cin = !empty($_POST['cin']) ? $_POST['cin'] : '';
+$tel = !empty($_POST['tel']) ? $_POST['tel'] : '';
+$mail = !empty($_POST['userMail']) ? $_POST['userMail'] : '';
+$password = !empty($_POST['password']) ? $_POST['password'] : '';
+$uType = !empty($_POST['type']) ? $_POST['type'] : '';
+$service = !empty($_POST['service']) ? $_POST['service'] : '';
 
 
 
 if (isset($_POST['addmEmp'])){
-    if (empty($cin)&& empty($mail)&& empty($password)){
+    if ($cin = '' && $mail == '' && $password == ''){
         header('location: ../directeur.php?add=EF');
     }else{
 
         require_once "../connexion.php";
 
-        $sql = "INSERT INTO `users`(`iduser`, `nom`, `prenom`, `cin`, `tel`, `mail`, `password`, `type`, `service`) VALUES (NULL,:fname,:lname,:cin,:tel,:mail,:password,:uType,:service)";
+        $sql = "INSERT INTO `users`(`nom`, `prenom`, `cin`, `tel`, `mail`, `password`, `type`, `service`) VALUES (:fname,:lname,:cin,:tel,:mail,:password,:uType,:service)";
     $sql = $conn->prepare($sql);
     $sql->bindParam(':fname', $fname);
     $sql->bindParam(':lname', $lname);
@@ -31,8 +31,13 @@ if (isset($_POST['addmEmp'])){
 
 //    print_r($cin);
 //    die();
-    $sql->execute();
+   $res = $sql->execute();
+    if ($res){
         header('location: ../directeur.php?add=OK');
+    }else{
+        header('location: ../directeur.php?add=EF');
+
+    }
 
     }
 

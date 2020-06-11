@@ -3,6 +3,8 @@ let showEmp = document.querySelector('.showEmployer'),
 	updateEmp = document.querySelector('.updateEmployer'),
 	deleteEmp = document.querySelector('.delEmployer'),
 	demande = document.querySelector('.demande');
+	tools = document.querySelectorAll('.tools');
+	tools_title = document.querySelectorAll('.rqt');
 
 // ***** Show Employers list
 
@@ -69,5 +71,12 @@ let addErrorF = ()=>{
 	showEmp.classList.add('hidden');
 };
 
-	
+for (let i = 0; i < tools.length; i++) {
+	tools[i].addEventListener('mouseenter',evt => {
+		tools_title[i].classList.remove('hidden');
+	});
+	tools[i].addEventListener('mouseleave',evt => {
+		tools_title[i].classList.add('hidden');
+	})
+}
 

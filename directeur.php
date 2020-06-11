@@ -47,7 +47,7 @@ if (!empty($_SESSION)) {
                     </div>
                     <div class="flex flex-col md:flex-row">
                         <div class="w-full mx-2 flex-1 svelte-1l8159u">
-                            <div class="font-bold h-6 mt-3 text-gray-600 text-xs leading-8 uppercase"> CIN</div>
+                            <div class="font-bold h-6 mt-3 text-gray-600 text-xs leading-8 uppercase"> CIN*</div>
                             <div class="bg-white my-2 p-1 flex border border-gray-200 rounded svelte-1l8159u">
                                 <input placeholder="AB123456"
                                        class="p-1 px-2 appearance-none outline-none w-full text-gray-800"
@@ -69,7 +69,7 @@ if (!empty($_SESSION)) {
                             <div class="font-bold h-6 mt-1 text-gray-600 text-xs leading-8 uppercase"> User Type</div>
                             <div class="rounded relative">
                                 <div class="flex svelte-1l8159u my-2 p-1">
-                                    <select name="type"
+                                    <select name="type" required
                                             class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
                                             id="grid-state">
                                         <option selected disabled>Select</option>
@@ -110,16 +110,16 @@ if (!empty($_SESSION)) {
                     <div class="flex flex-col md:flex-row">
 
                         <div class="w-full mx-2 flex-1 svelte-1l8159u">
-                            <div class="font-bold h-6 mt-3 text-gray-600 text-xs leading-8 uppercase"> Password</div>
+                            <div class="font-bold h-6 mt-3 text-gray-600 text-xs leading-8 uppercase"> Password*</div>
                             <div class="bg-white my-2 p-1 flex border border-gray-200 rounded svelte-1l8159u">
-                                <input placeholder="AB123456"
+                                <input placeholder="******"
                                        class="p-1 px-2 appearance-none outline-none w-full text-gray-800"
                                        type="password"
                                 name="password">
                             </div>
                         </div>
                         <div class="w-full mx-2 flex-1 svelte-1l8159u">
-                            <div class="font-bold h-6 mt-3 text-gray-600 text-xs leading-8 uppercase">Employer Email
+                            <div class="font-bold h-6 mt-3 text-gray-600 text-xs leading-8 uppercase">Employer Email*
                             </div>
                             <div class="bg-white my-2 p-1 flex border border-gray-200 rounded svelte-1l8159u">
                                 <input placeholder="example@mail.com" id="userMail" name="userMail"
@@ -167,11 +167,13 @@ if (!empty($_SESSION)) {
         <div class="flex justify-around items-center py-3 bg-gray-900 rounded-t-lg bottom_nav sm:w-auto m-0 ">
 
             <?php include "includes/bottomMenu.php" ?>
-            <div class="">
+            <div class="tools">
                 <button name="btn_demandeList" onclick="resRequest()" id="btn_demandeList"
                         class="bg-white mx-2 rounded-lg px-4 py-3 hover:bg-gray-300 hover:text-white">
                     <i class="fas fa-envelope-open-text text-gray-900  text-2xl"></i>
                 </button>
+                <h3 class="text-white rqt hidden font-bold text-center mt-3"> Requests </h3>
+
             </div>
         </div>
 
