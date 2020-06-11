@@ -169,10 +169,10 @@ if (!empty($_SESSION)) {
             <?php include "includes/bottomMenu.php" ?>
             <div class="tools">
                 <button name="btn_demandeList" onclick="resRequest()" id="btn_demandeList"
-                        class="bg-white mx-2 rounded-lg px-4 py-3 hover:bg-gray-300 hover:text-white">
+                        class="bg-white mx-2 border shadow-md border-gray-900 rounded-lg px-4 py-3 hover:bg-gray-300 hover:text-white">
                     <i class="fas fa-envelope-open-text text-gray-900  text-2xl"></i>
                 </button>
-                <h3 class="text-white rqt hidden font-bold text-center mt-3"> Requests </h3>
+                <h5 class="text-white rqt hidden text-center mt-2"> Requests </h5>
 
             </div>
         </div>

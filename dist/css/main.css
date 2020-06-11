@@ -15,6 +15,13 @@ body::-webkit-scrollbar-thumb {
   background-color: #1a202c;
   outline: 1px solid slategrey; }
 
+.tools {
+  position: relative; }
+
+.rqt {
+  margin-bottom: 3rem;
+  border-bottom: 1px solid white; }
+
 .error {
   left: 10%;
   right: 10%;
@@ -36,7 +43,8 @@ body::-webkit-scrollbar-thumb {
   right: 30%;
   bottom: 0;
   position: fixed;
-  z-index: 99; }
+  z-index: 99;
+  height: 4.5rem; }
 
 @media (max-width: 768px) {
   .bottom_nav {
