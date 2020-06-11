@@ -1,5 +1,4 @@
 <?php
-require_once "../connexion.php";
 session_start();
 
 //    if (!empty($_SESSION['mail'])){
@@ -8,6 +7,8 @@ session_start();
 //        $send = mysqli_query($conn, $sql);
 //    }
 if (!empty($_SESSION['email'])){
+    require_once "../connexion.php";
+
     $cin = $_GET['CIN'];
     $sql = "DELETE FROM `users` WHERE cin = :cin";
     $sql = $conn->prepare($sql);

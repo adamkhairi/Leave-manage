@@ -62,9 +62,12 @@ let resRequest = ()=>{
 	updateEmp.classList.add('hidden');
 	deleteEmp.classList.add('hidden');
 	demande.classList.toggle('hidden');
-}
-
-
+};
+ // Error in add
+let addErrorF = ()=>{
+	addEmp.classList.remove('hidden');
+	showEmp.classList.add('hidden');
+};
 
 	
 

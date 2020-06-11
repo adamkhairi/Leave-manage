@@ -16,11 +16,11 @@
     <div class="container mx-auto max-w-4xl h-16 flex justify-around text-xs md:text-sm">
 
         <div class="h-full flex items-center">
-            <a href="index.php" class="text-gray-900 no-underline mr-6">
+            <a href="index.php" class="text-gray-900 no-underline mr-2 sm:mr-6">
                 <span class="m-0 sm:ml-2">Home</span>
             </a>
-            <a href="#about-us" class="text-gray-900 text-center sm:text-left no-underline mr-6">
-                <span class=" m-0 sm:ml-2">About us</span>
+            <a href="#about-us" class="text-gray-900 text-center sm:text-left no-underline mr-2 sm:mr-6">
+                <span class="flex-no-wrap m-0 sm:ml-2">About us</span>
             </a>
         </div>
 

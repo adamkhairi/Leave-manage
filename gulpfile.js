@@ -38,4 +38,4 @@ function watchTask() {
 		series(parallel(scssTask, jsTask))
 	);
 }
-exports.default = series(parallel(scssTask, jsTask), watchTask)
+exports.default = series(parallel(scssTask, jsTask), watchTask);
