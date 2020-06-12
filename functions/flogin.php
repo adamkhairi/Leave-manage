@@ -1,7 +1,7 @@
 <?php
 require_once "../connexion.php";
 session_start();
-
+require_once "functions.php";
 if (isset($_POST['loginBtn'])) {
 
 
@@ -35,30 +35,31 @@ if (isset($_POST['loginBtn'])) {
             $_SESSION['tel'] = $end['tel'];
             $_SESSION['service'] = $end['service'];
             $_SESSION['userType'] = $end['type'];
-            switch ($type) {
-                case 1:
-                    header('location: ../directeur.php');
-                    break;
 
-                case 2:
-                    header('location: ../admin.php');
-                    break;
-
-                case 3:
-                    header('location: ../employe.php');
-                    break;
-
-                default:
-                    header('location: ../index.php');
-            }
-
+            redirectUser($end['type']);
+            exit();
         } else {
             header("location: ../index.php?error=00");
 
 
         }
 //    $_SESSION[]
-
+//        switch ($type) {
+//            case 1:
+//                header('location: ../directeur.php');
+//                break;
+//
+//            case 2:
+//                header('location: ../admin.php');
+//                break;
+//
+//            case 3:
+//                header('location: ../employer.php');
+//                break;
+//
+//            default:
+//                header('location: ../index.php');
+//        }
 
 //    header('location: ../index.php');
     }

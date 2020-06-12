@@ -37,17 +37,37 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   z-index: 99;
   top: 15%;
-  -moz-animation: cssAnimation 0s ease-in 5s forwards;
+  -moz-animation: cssAnimation 0s ease-in 8s forwards;
   /* Firefox */
-  -webkit-animation: cssAnimation 0s ease-in 5s forwards;
+  -webkit-animation: cssAnimation 0s ease-in 8s forwards;
   /* Safari and Chrome */
-  -o-animation: cssAnimation 0s ease-in 5s forwards;
+  -o-animation: cssAnimation 0s ease-in 8s forwards;
   /* Opera */
-  animation: cssAnimation 0s ease-in 5s forwards;
+  animation: cssAnimation 0s ease-in 8s forwards;
   -webkit-animation-fill-mode: forwards;
   animation-fill-mode: forwards;
 }
+@keyframes cssAnimation {
+  to {
+    width:0;
+    height:0;
+    overflow:hidden;
+    //display:none !important;
+    visibility: hidden;
 
+
+  }
+}
+@-webkit-keyframes cssAnimation {
+  to {
+    width:0;
+    height:0;
+    overflow:hidden;
+
+    //display:none !important;
+    visibility: hidden;
+  }
+}
 .bottom_nav {
   left: 30%;
   right: 30%;
@@ -71,24 +91,3 @@ body::-webkit-scrollbar-thumb {
   }
 
 
-@keyframes cssAnimation {
-  to {
-    width:0;
-    height:0;
-    overflow:hidden;
-    //display:none !important;
-    visibility: hidden;
-
-
-  }
-}
-@-webkit-keyframes cssAnimation {
-  to {
-    width:0;
-    height:0;
-    overflow:hidden;
-
-    //display:none !important;
-    visibility: hidden;
-  }
-}
