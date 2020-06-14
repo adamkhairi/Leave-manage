@@ -52,10 +52,7 @@ body::-webkit-scrollbar-thumb {
     width:0;
     height:0;
     overflow:hidden;
-    //display:none !important;
     visibility: hidden;
-
-
   }
 }
 @-webkit-keyframes cssAnimation {
@@ -63,8 +60,6 @@ body::-webkit-scrollbar-thumb {
     width:0;
     height:0;
     overflow:hidden;
-
-    //display:none !important;
     visibility: hidden;
   }
 }
@@ -75,8 +70,6 @@ body::-webkit-scrollbar-thumb {
   position: fixed;
   z-index: 99;
   height: 4.5rem;
-
-
 }
   @media (max-width: 768px) {
     .bottom_nav {
@@ -87,7 +80,6 @@ body::-webkit-scrollbar-thumb {
       zoom: .8;
       font-size: 12px;
     }
-
   }
 
 
