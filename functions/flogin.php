@@ -3,63 +3,41 @@ require_once "../connexion.php";
 session_start();
 require_once "functions.php";
 if (isset($_POST['loginBtn'])) {
+    if (!empty($_POST['mail']) || !empty($_POST['password'])) {
 
-
-    if (empty($_POST['email']) || empty($_POST['password'])) {
-        header("location: ../index.php?error=emptyfields");
-        exit();
-//        print_r('erooor');
-//        die();
-    } else {
-        $sql = "SELECT * FROM users INNER JOIN tuser ON users.type=tuser.typeUser WHERE users.mail=:email and users.password=:pwd ";
-        $result = $conn->prepare($sql);
-
-        $result->bindParam(':email', $email);
-        $result->bindParam(':pwd', $password);
-
-        $email = $_POST['email'];
+        $mail = $_POST['mail'];
         $password = $_POST['password'];
-        $result->execute();
-        $end = $result->fetch();
-        if (!empty($end)) {
-            print_r($end);
-//        die();
-            $type = $end['name'];
+        $sql = "SELECT * FROM users INNER JOIN tuser ON users.type=tuser.typeUser WHERE users.mail= ? ";
+        $stmt = $conn->prepare($sql);
+        $stmt->execute([$mail]);
+        $data = $stmt->fetch();
 
-            $_SESSION['email'] = $end['mail'];
-            $_SESSION['password'] = $end['password'];
-            $_SESSION['nom'] = $end['nom'];
-            $_SESSION['prenom'] = $end['prenom'];
-            $_SESSION['cin'] = $end['cin'];
-            $_SESSION['tel'] = $end['tel'];
-            $_SESSION['service'] = $end['service'];
-            $_SESSION['userType'] = $end['type'];
+        if (!empty($data)) {
+            if ($data['password'] == $password) {
 
-            redirectUser($type);
-            exit();
+                $_SESSION['nom'] = $data['nom'];
+                $_SESSION['prenom'] = $data['prenom'];
+                $_SESSION['cin'] = $data['cin'];
+                $_SESSION['tel'] = $data['tel'];
+                $_SESSION['service'] = $data['service'];
+                $_SESSION['typeUser'] = $data['typeUser'];
+                $_SESSION['typeName'] = $data['name'];
+                $_SESSION['mail'] = $data['mail'];
+
+//                print_r($data);
+                $type = $data['name'];
+                redirectUser($type);
+
+            } else {
+                header("location: ../index.php?error=Pwd");
+
+            }
         } else {
-            header("location: ../index.php?error=00");
-
+            header("location: ../index.php?error=LOG");
 
         }
-//    $_SESSION[]
-//        switch ($type) {
-//            case 1:
-//                header('location: ../directeur.php');
-//                break;
-//
-//            case 2:
-//                header('location: ../admin.php');
-//                break;
-//
-//            case 3:
-//                header('location: ../employer.php');
-//                break;
-//
-//            default:
-//                header('location: ../index.php');
-//        }
+    } else {
+        header("location: ../index.php?error=EmF");
 
-//    header('location: ../index.php');
     }
 }
