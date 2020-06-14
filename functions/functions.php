@@ -1,15 +1,11 @@
 <?php
+ function redirectUser($type){
+    if ($type){
 
-function redirectUser($type){
-    if ($type == 1){
-        $header = 'directeur';
-    }else  if ($type == 2){
-        $header = 'admin';
-    }else  if ($type == 3){
-        $header = 'employer';
+     header('location: ../'.$type.'.php');
     }else {
-        $header = 'index';
+     header('location: ../index.php');
+
     }
-    $redirection = header('location: ../'.$header.'.php');
-    return $redirection;
-}
+
+};

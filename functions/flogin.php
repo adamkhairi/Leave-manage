@@ -11,21 +11,20 @@ if (isset($_POST['loginBtn'])) {
 //        print_r('erooor');
 //        die();
     } else {
-        $sql = "SELECT * FROM `users` WHERE `mail`= :email AND `password`= :password";
+        $sql = "SELECT * FROM users INNER JOIN tuser ON users.type=tuser.typeUser WHERE users.mail=:email and users.password=:pwd ";
         $result = $conn->prepare($sql);
 
         $result->bindParam(':email', $email);
-        $result->bindParam(':password', $password);
+        $result->bindParam(':pwd', $password);
 
         $email = $_POST['email'];
         $password = $_POST['password'];
         $result->execute();
         $end = $result->fetch();
-
         if (!empty($end)) {
             print_r($end);
 //        die();
-            $type = $end['type'];
+            $type = $end['name'];
 
             $_SESSION['email'] = $end['mail'];
             $_SESSION['password'] = $end['password'];
@@ -36,7 +35,7 @@ if (isset($_POST['loginBtn'])) {
             $_SESSION['service'] = $end['service'];
             $_SESSION['userType'] = $end['type'];
 
-            redirectUser($end['type']);
+            redirectUser($type);
             exit();
         } else {
             header("location: ../index.php?error=00");
