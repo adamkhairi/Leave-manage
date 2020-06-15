@@ -32,25 +32,25 @@
         <div class="h-full flex items-center">
 
             <?php
-            if (!empty($_SESSION['email'])) {
+            if (!empty($_SESSION['mail'])) {
 
-                if ($_SESSION['userType'] == 1) {
+                if ($_SESSION['typeUser'] == 1) {
                     echo "
-                   <a href=\"directeur.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-200\">
-                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                   <a href=\"".$_SESSION['typeName'].".php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-200\">
+                        <span class=\"m-0 sm:ml-2\">".$_SESSION['typeName']." Profile</span>
                     </a>
                 ";
 
-                } else if ($_SESSION['userType'] == 2) {
+                } else if ($_SESSION['typeUser'] == 2) {
                     echo "
-                   <a href=\"admin.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-100 px-4 py-1 pr-5\">
-                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                   <a href=\"".$_SESSION['typeName'].".php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-100 px-4 py-1 pr-5\">
+                        <span class=\"m-0 sm:ml-2\">".$_SESSION['typeName']." Profile</span>
                     </a>
                 ";
-                }else if ($_SESSION['userType'] == 3) {
+                }else if ($_SESSION['typeUser'] == 3) {
                     echo "
-                   <a href=\"employer.php\" class=\"text-gray-900 no-underline ml-6\">
-                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                   <a href=\"".$_SESSION['typeName'].".php\" class=\"text-gray-900 no-underline ml-6\">
+                        <span class=\"m-0 sm:ml-2\">".$_SESSION['typeName']." Profile</span>
                     </a>
                 ";
                 }
