@@ -3,12 +3,13 @@
 <?php require "connexion.php";
 @include "includes/header.php";
 if (!empty($_SESSION)) {
-    if ($_SESSION['typeUser'] !== 1) {
-header('location: index.php?error=dd');
-////die();
+    if ($_SESSION['userType'] !== 1) {
+//header('location: index.php?x=dd');
+//die();
 //        require_once "functions/functions.php";
-//        redirectUser($_SESSION['typeN']);
-////        exit();
+
+//        redirectUser($_SESSION['userType']);
+//        exit();
     }
 
 }
@@ -60,7 +61,7 @@ header('location: index.php?error=dd');
             <?php include "includes/bottomMenu.php";
             if (!empty($_SESSION)) {
 
-                if ($_SESSION['typeUser'] == 1) {
+                if ($_SESSION['userType'] == 1) {
                     echo "
                 
                 <div class=\"tools\" onclick=\"resRequest()\">
