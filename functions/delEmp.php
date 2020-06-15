@@ -18,5 +18,5 @@ if (!empty($_SESSION['email'])){
 //    die();
     $sql->execute();
     echo "Done !!!";
-    header('location: ../directeur.php');
+    header('location: ../Director.php');
 }

@@ -13,7 +13,7 @@ if (!empty($_SESSION)) {
 
     if (isset($_POST['addmEmp'])) {
         if ($cin == '' && $mail == '' && $password == '') {
-            header('location: ../directeur.php?add=EF');
+            header('location: ../Director.php?add=EF');
         } else {
 
             require_once "../connexion.php";
@@ -33,23 +33,16 @@ if (!empty($_SESSION)) {
 //    die();
             $res = $sql->execute();
             if ($res) {
-                header('location: ../directeur.php?add=OK');
+                header('location: ../Director.php?add=OK');
             } else {
-                header('location: ../directeur.php?add=EF');
-
+                header('location: ../Director.php?add=EF');
             }
-
         }
-
     } else {
-        header('location: ../directeur.php?add=NOT');
+        header('location: ../Director.php?add=NOT');
 
     }
-} else {
-    header('location: ../index.php?error=LOG');
-
 }
-
 
 
 

@@ -34,23 +34,23 @@
             <?php
             if (!empty($_SESSION['email'])) {
 
-                if ($_SESSION['userType'] == 1) {
+                if ($_SESSION['typeUser'] == 1) {
                     echo "
-                   <a href=\"directeur.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-200\">
-                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                   <a href=\"Director.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-200\">
+                        <span class=\"m-0 sm:ml-2\">".$_SESSION['typeName']."'s Profile</span>
                     </a>
                 ";
 
-                } else if ($_SESSION['userType'] == 2) {
+                } else if ($_SESSION['typeUser'] == 2) {
                     echo "
-                   <a href=\"admin.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-100 px-4 py-1 pr-5\">
-                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                   <a href=\"Admin.php\" class=\"text-gray-900 no-underline ml-6 hover:bg-gray-100 px-4 py-1 pr-5\">
+                        <span class=\"m-0 sm:ml-2\">".$_SESSION['typeName']." Profile</span>
                     </a>
                 ";
-                }else if ($_SESSION['userType'] == 3) {
+                }else if ($_SESSION['typeUser'] == 3) {
                     echo "
-                   <a href=\"employer.php\" class=\"text-gray-900 no-underline ml-6\">
-                        <span class=\"m-0 sm:ml-2\">Profile</span>
+                   <a href=\"Employer.php\" class=\"text-gray-900 no-underline ml-6\">
+                        <span class=\"m-0 sm:ml-2\">".$_SESSION['typeName']." Profile</span>
                     </a>
                 ";
                 }
@@ -76,29 +76,3 @@
         </div>
     </div>
 </nav>
-
-<!--<div class="w-full md:w-1/4 lg:w-1/6 bg-gray-900 md:bg-gray-900 px-2 text-center fixed bottom-0 md:pt-8 md:top-0 md:left-0 h-16 md:h-screen md:border-r-4 md:border-gray-600">-->
-<!--   <div class=" w-1/3">-->
-<!--        <img src="dist/img/logo.png" class="hidden md:flex text-center mx-auto pb-8 w-16" alt="logo">-->
-<!--   </div>-->
-<!--    <div class="md:relative mx-auto mx-auto lg:px-6">-->
-<!--        <ul class=" flex flex-row md:flex-col text-center md:text-left">-->
-<!--            <li class="mr-3 flex-1 text-center">-->
-<!--                <a href="index.php" class="block py-1 md:py-5 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">-->
-<!--                    <i class="fas fa-home pr-0 md:pr-3 text-lg hover:text-3xl"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Home</span>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="mr-3 flex-1 text-center px-2">-->
-<!--                <a href="#" class="block py-1 md:py-5 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">-->
-<!--                    <i class="fas fa-user-circle pr-0 md:pr-3 text-lg hover:text-3xl"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Profile</span>-->
-<!--                </a>-->
-<!--            </li>-->
-<!--            <li class="mr-3 flex-1 text-center">-->
-<!--                <a href="#" class="block py-1 md:py-5 pl-1 align-middle text-gray-800 no-underline hover:text-pink-500 border-b-2 border-gray-800 md:border-gray-900 hover:border-pink-500">-->
-<!--                    <i class="fas fa-user-circle pr-0 md:pr-3 text-lg hover:text-3xl"></i><span class="pb-1 md:pb-0 text-xs md:text-base text-gray-600 md:text-gray-400 block md:inline-block">Profile</span>-->
-<!--                </a>-->
-<!--            </li>-->
-<!---->
-<!--        </ul>-->
-<!--    </div>-->
-<!--</div>-->

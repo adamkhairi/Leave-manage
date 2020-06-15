@@ -8,7 +8,7 @@ if (!empty($_SESSION)) {
     require_once "functions/functions.php";
 
 //     if ($_SESSION['userType'] !== 1 || $_SESSION['userType'] !== 2) {
-//         header('location: employer.php');
+//         header('location: Employer.php');
 //    redirectUser($_SESSION['userType']);
 //exit();
 //     }

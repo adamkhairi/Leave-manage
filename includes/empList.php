@@ -37,7 +37,7 @@
             <tbody>
 
             <?php
-            if (!empty($_SESSION['email']) && $_SESSION['userType'] <= 2) {
+            if (!empty($_SESSION['email']) && $_SESSION['typeUser'] <= 2) {
                 $stmt = $conn->prepare("SELECT u.* ,t.name FROM users u
                                                             INNER JOIN tuser t on u.type = t.typeUser
                                                             ");
