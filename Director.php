@@ -4,10 +4,10 @@
 @include "includes/header.php";
 if (!empty($_SESSION)) {
     if ($_SESSION['typeUser'] != 1) {
-header('location: index.php?x=dd');
-die();
-//        require_once "functions/functions.php";
-//        redirectUser($_SESSION['typeName']);
+// header('location: index.php?x=dd');
+// die();
+       require_once "functions/functions.php";
+       redirectUser($_SESSION['typeName']);
 //        exit();
     }
 }

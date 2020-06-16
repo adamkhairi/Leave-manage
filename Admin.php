@@ -3,18 +3,14 @@
 <?php
 require "connexion.php";
 @include "includes/header.php";
-
 if (!empty($_SESSION)) {
-    require_once "functions/functions.php";
-
-//     if ($_SESSION['userType'] !== 1 || $_SESSION['userType'] !== 2) {
-//         header('location: Employer.php');
-//    redirectUser($_SESSION['userType']);
-//exit();
-//     }
-} else {
-    header('location: index.php');
-
+    if ($_SESSION['typeUser'] > 2) {
+// header('location: index.php?x=dd');
+// die();
+       require_once "functions/functions.php";
+       redirectUser($_SESSION['typeName']);
+//        exit();
+    }
 }
 ?>
 
