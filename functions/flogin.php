@@ -32,7 +32,7 @@ if (isset($_POST['loginBtn'])) {
 //print_r($end['name']);
 //print_r($end['typeUser']);
 //die();
-                redirectUser($type);
+                redirectUser('../'.$type);
                 exit();
             } else {
                 header("location: ../index.php?error=Pwd");

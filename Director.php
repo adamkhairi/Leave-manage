@@ -7,7 +7,7 @@ if (!empty($_SESSION)) {
 // header('location: index.php?x=dd');
 // die();
         require_once "functions/functions.php";
-        redirectUser($_SESSION['typeName']);
+        redirectUser('./'.$_SESSION['typeName']);
 //        exit();
     }
 }

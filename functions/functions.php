@@ -3,7 +3,8 @@
 function redirectUser($type)
 {
     if ($type) {
-        header('location: ../' . $type . '.php');
+
+        header('location: ' . $type . '.php');
 
     }
 
