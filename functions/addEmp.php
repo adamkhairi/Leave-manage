@@ -1,4 +1,5 @@
 <?php
+session_start();
 if (!empty($_SESSION)) {
 
     $fname = !empty($_POST['fName']) ? $_POST['fName'] : '';
@@ -11,13 +12,12 @@ if (!empty($_SESSION)) {
     $service = !empty($_POST['service']) ? $_POST['service'] : '';
 
 
-    if (isset($_POST['addmEmp'])) {
+//    if (isset($_POST['addmEmp'])) {
         if ($cin == '' && $mail == '' && $password == '') {
-            header('location: ../Director.php?add=EF');
+            header('location: ../'.$_SESSION['typeName'].'.php?add=EF');
         } else {
 
             require_once "../connexion.php";
-
             $sql = "INSERT INTO `users`(`nom`, `prenom`, `cin`, `tel`, `mail`, `password`, `type`, `service`) VALUES (:fname,:lname,:cin,:tel,:mail,:password,:uType,:service)";
             $sql = $conn->prepare($sql);
             $sql->bindParam(':fname', $fname);
@@ -33,16 +33,17 @@ if (!empty($_SESSION)) {
 //    die();
             $res = $sql->execute();
             if ($res) {
-                header('location: ../Director.php?add=OK');
+                header('location: ../'.$_SESSION['typeName'].'.php?add=OK');
             } else {
-                header('location: ../Director.php?add=EF');
+                header('location: ../'.$_SESSION['typeName'].'.php?add=EF');
             }
         }
-    } else {
-        header('location: ../Director.php?add=NOT');
-
-    }
+//    } else {
+//        header('location: ../Director.php?add=NOT');
+//
+//    }
 }
+
 
 
 

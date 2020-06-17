@@ -72,7 +72,7 @@
                     <div class="font-bold h-6 mt-3 text-gray-600 text-xs leading-8 uppercase">Employer Service
                     </div>
                     <div class="bg-white my-2 p-1 flex border border-gray-200 rounded svelte-1l8159u">
-                        <input placeholder="Discription..." id="userMail" name="service"
+                        <input placeholder="Discription..." id="userService" name="service"
                                class="p-1 px-2 appearance-none outline-none w-full text-gray-800"
                                type="text">
                     </div>

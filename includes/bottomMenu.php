@@ -20,12 +20,4 @@
         <h5 class="text-white rqt hidden text-center mt-2"> Edit </h5>
 
     </div>
-    <div class="tools" id="btn_delEmp">
-        <button name="btn_delEmp"  class="bg-white border-gray-900 mx-2 rounded-lg border shadow-md px-4 py-3 hover:bg-gray-300">
-            <i class="fas fa-user-minus text-gray-900  text-2xl"></i>
-        </button>
-        <h5 class="text-white select-none rqt hidden text-center mt-2"> Remove </h5>
-
-    </div>
-
 

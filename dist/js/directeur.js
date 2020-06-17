@@ -47,17 +47,6 @@ document.querySelector('#btn_updateEmp').addEventListener('click',evt => {
 	
  };
 // *****  Delete Employer
-
-document.querySelector('#btn_delEmp').addEventListener('click',evt => {
-	evt.preventDefault();
-	showEmp.classList.add('hidden');
-	addEmp.classList.add('hidden');
-	updateEmp.classList.add('hidden');
-	deleteEmp.classList.toggle('hidden');
-	demande.classList.add('hidden');
-	
-});
-// *****  Delete Employer
 let resRequest = ()=>{
 	showEmp.classList.add('hidden');
 	addEmp.classList.add('hidden');

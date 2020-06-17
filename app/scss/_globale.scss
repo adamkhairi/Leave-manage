@@ -21,6 +21,13 @@ body::-webkit-scrollbar-thumb {
   background-color: #1a202c;
   outline: 1px solid slategrey;
 }
+main{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
 .tools{
   position: relative;
 }

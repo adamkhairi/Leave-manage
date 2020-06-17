@@ -6,8 +6,8 @@ if (!empty($_SESSION)) {
     if ($_SESSION['typeUser'] != 1) {
 // header('location: index.php?x=dd');
 // die();
-       require_once "functions/functions.php";
-       redirectUser($_SESSION['typeName']);
+        require_once "functions/functions.php";
+        redirectUser($_SESSION['typeName']);
 //        exit();
     }
 }
@@ -17,8 +17,8 @@ if (!empty($_SESSION)) {
 
 <!--**** MAIN ****-->
 
-<main class="h-screen">
-    <section class="showEmployer container mx-auto px-4 mt-16 rounded-md shadow border border-gray-200">
+<main class="">
+    <section class="showEmployer container mx-auto px-4 rounded-md shadow border border-gray-200">
         <!--        TODO:Add Search Bar (by"CIN")       -->
         <h1 class="text-gray-900 font-bold text-2xl text-center mt-4">Employer List</h1>
 
@@ -28,31 +28,27 @@ if (!empty($_SESSION)) {
 
     <!--    **** Add Employer ****-->
 
-    <section class="addEmployer container mx-auto mt-16 hidden rounded-md shadow border border-gray-200">
+    <section class="addEmployer container mx-auto hidden px-4 rounded-md shadow border border-gray-200">
 
         <h1 class="text-gray-900 font-bold text-2xl text-center mt-4">New Employer</h1>
         <?php include "includes/addEmpForm.php" ?>
 
     </section>
-    <section class="updateEmployer hidden">
+    <section class="updateEmployer container mx-auto hidden px-4 rounded-md shadow border border-gray-200">
+        <h1 class="text-gray-900 font-bold text-2xl text-center mt-4">Update Information</h1>
 
-
-        cccccccccccc
-
-    </section>
-    <section class="delEmployer hidden">
-
-        dddddddddddddd
+        <?php include "includes/updateEmp.php" ?>
 
 
     </section>
+
     <section class="demande hidden">
 
         wwwwwwwwwwwwwww
 
 
     </section>
-
+<!--******************-->
     <section>
         <div class="flex justify-around items-center py-3 bg-gray-900 rounded-t-lg bottom_nav sm:w-auto m-0 ">
             <?php include "includes/bottomMenu.php";
@@ -75,10 +71,33 @@ if (!empty($_SESSION)) {
 </main>
 
 <!--**** FOOTER ****-->
-<?php include "includes/error.php"?>
+<?php include "includes/error.php" ?>
 <?php include "includes/footer.php"; ?>
 <script src="dist/js/directeur.js"></script>
 <script>
-
+	$(document).ready(function () {
+		$('#sCin').keyup(function () {
+			let search = $(this).val();
+			$.ajax({
+				url: 'functions/srch.php',
+				method: 'post',
+				data: {query: search},
+				success: function (data) {
+					$('#table-data').html(data);
+				}
+			})
+		})
+		$('#searchup').keyup(function () {
+			let search = $(this).val();
+				$.ajax({
+					url: 'functions/upsrc.php',
+					method: 'post',
+					data: {query: search},
+					success: function (data) {
+						$('#form-update').html(data);
+					}
+				})
+		})
+	})
 </script>
 </body>
