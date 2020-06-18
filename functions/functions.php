@@ -190,7 +190,7 @@ function listRows($result)
                                     <form action='functions/delEmp.php' method='get' >
                                 <input type='text' hidden id='" . $row['cin'] . "' name='CIN' value='" . $row['cin'] . "'>
                                 <button class=\"ml-3 text-red-600 hover:text-red-500\" 
-                               
+                               onsubmit=\"return confirm('Really Delete?');\"
                                 name=\"del-current\" 
                                 type=\"submit\"
                                 >
