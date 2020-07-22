@@ -4,5 +4,5 @@
 
 # IntelliJ project files
 .idea
-/node_modules/
-/app/
+/node_modules
+/app
